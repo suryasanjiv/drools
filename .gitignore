@@ -1,0 +1,76 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Gradle wrapper cache
+.gradle/
+
+# Kotlin/Java artifacts
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*~
+
+# Node
+node_modules/
+
+# Build reports / coverage
+coverage/
+jacoco.exec
+
+# Keystore / credentials / env
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.*
+
+# Kotlin annotation processing
+kapt/
+ksp/
+.kotlin/**
+
+# Misc
+/.mvn/
+.target/
+
+# Ignore IDE-specific run/debug configs
+run/
+
+# Do not ignore source, resources, openspec artifacts, or build scripts
+# (intentionally left unignored: src/, openspec/, build.gradle.kts, settings.gradle.kts)
