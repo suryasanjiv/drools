@@ -1,0 +1,38 @@
+package com.example.drools.eligibility
+
+import com.example.drools.eligibility.CabinClass;
+import com.example.drools.eligibility.EligibilityResult;
+import com.example.drools.eligibility.TripFact;
+
+// Grant rules only. EligibilityResult starts as eligible = false (deny-by-default).
+// Rules only fire when facts match conditions; null fields simply won't match.
+
+rule "Economy eligible for any positive duration"
+    when
+        TripFact(chosenCabinClass == CabinClass.ECONOMY,
+                 flightDurationHours != null,
+                 flightDurationHours > 0)
+        $result: EligibilityResult()
+    then
+        $result.setEligible(true);
+end
+
+rule "Premium economy eligible for 6 hours or more"
+    when
+        TripFact(chosenCabinClass == CabinClass.PREMIUM_ECONOMY,
+                 flightDurationHours != null,
+                 flightDurationHours >= 6)
+        $result: EligibilityResult()
+    then
+        $result.setEligible(true);
+end
+
+rule "Business eligible for over 10 hours"
+    when
+        TripFact(chosenCabinClass == CabinClass.BUSINESS,
+                 flightDurationHours != null,
+                 flightDurationHours > 10)
+        $result: EligibilityResult()
+    then
+        $result.setEligible(true);
+end
